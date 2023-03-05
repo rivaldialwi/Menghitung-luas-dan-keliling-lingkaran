@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form" action="#" method="post" onsubmit="hitungLuas(); return false;">
+        <label for="jari-jari" class="label">Masukkan jari-jari lingkaran:</label>
+        <input type="number" id="jari-jari" name="jari-jari" class="luas" required>
+        <input type="submit" value="Hitung Luas" class="button">
+        <div id="hasil-luas"></div>
+      </form>
+</body>
+<script>
+   function hitungLuas() {
+  // Ambil nilai jari-jari dari input
+  var jari_jari = document.getElementById("jari-jari").value;
+  
+  // Hitung luas lingkaran
+  var luas = Math.PI * Math.pow(jari_jari, 2);
+  
+  // Tampilkan hasil luas lingkaran
+  document.getElementById("hasil-luas").innerHTML = "Luas lingkaran dengan jari-jari " + jari_jari + " adalah " + luas.toFixed(2);
+}
+</script>
+</html>
