@@ -8,23 +8,36 @@
     <title>Document</title>
 </head>
 <body>
-    <form class="form" action="#" method="post" onsubmit="hitungLuas(); return false;">
+    <form class="form" action="#" method="post" onsubmit="hitungLuas(); hitungKeliling(); return false;">
         <label for="jari-jari" class="label">Masukkan jari-jari lingkaran:</label>
         <input type="number" id="jari-jari" name="jari-jari" class="luas" required>
-        <input type="submit" value="Hitung Luas" class="button">
+        <input type="submit" value="Hitung" class="button">
         <div id="hasil-luas"></div>
-      </form>
+        <div id="hasil-keliling"></div>
+    </form>
+
+    <script>
+        function hitungLuas() {
+            // Ambil nilai jari-jari dari input
+            var jari_jari = document.getElementById("jari-jari").value;
+            
+            // Hitung luas lingkaran
+            var luas = Math.PI * Math.pow(jari_jari, 2);
+            
+            // Tampilkan hasil luas lingkaran
+            document.getElementById("hasil-luas").innerHTML = "Luas lingkaran dengan jari-jari " + jari_jari + " adalah " + luas.toFixed(2);
+        }
+
+        function hitungKeliling() {
+            // Ambil nilai jari-jari dari input
+            var jari_jari = document.getElementById("jari-jari").value;
+            
+            // Hitung keliling lingkaran
+            var keliling = 2 * Math.PI * jari_jari;
+            
+            // Tampilkan hasil keliling lingkaran
+            document.getElementById("hasil-keliling").innerHTML = "Keliling lingkaran dengan jari-jari " + jari_jari + " adalah " + keliling.toFixed(2);
+        }
+    </script>
 </body>
-<script>
-   function hitungLuas() {
-  // Ambil nilai jari-jari dari input
-  var jari_jari = document.getElementById("jari-jari").value;
-  
-  // Hitung luas lingkaran
-  var luas = Math.PI * Math.pow(jari_jari, 2);
-  
-  // Tampilkan hasil luas lingkaran
-  document.getElementById("hasil-luas").innerHTML = "Luas lingkaran dengan jari-jari " + jari_jari + " adalah " + luas.toFixed(2);
-}
-</script>
 </html>
